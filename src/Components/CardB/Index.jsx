@@ -8,11 +8,11 @@ function CardB() {
   const { latitude } = useContext(latitudeContext);
   const { data } = latitude;
   const { list } = data;
-  const listData = list.slice(1, 5);
+  const listData = list ? list.slice(1, 5) : [];
 
   return (
     <div className=" w-full bg-white rounded-xl p-4 flex flex-col gap-10">
-      <h1 className=" text-zinc-600 text-xl font-bold">Today's Forecast for {data.city.name}, Indonesia</h1>
+      <h1 className=" text-zinc-600 text-xl font-bold">Today's Forecast for {data?.city?.name}, Indonesia</h1>
       <div className=" w-full flex gap-4 justify-center items-center px-8 mt-10">
         {listData.map((data, i) => (
           <Items key={i} data={data} />

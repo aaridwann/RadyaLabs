@@ -11,16 +11,20 @@ function Details() {
   const { city } = FetchCity(id);
   let list = [];
   data.list ? (list = [data.list[7], data.list[9]]) : [];
-  const dataCity = city.data
+  const dataCity = city.data;
 
-  console.log("cardetails", data);
   return (
     <div className="w-full bg-white p-8">
       <span className=" flex items-center gap-4">
         <h1 className=" text-4xl text-zinc-700 font-bold">10 Hour Weather </h1>
-        <p className=" mt-2 text-zinc-600 text-lg"> {' - '} {dataCity.name}, Indonesia</p>
+        <p className=" mt-2 text-zinc-600 text-lg">
+          {" "}
+          {" - "} {dataCity.name}, Indonesia
+        </p>
       </span>
-      <h1 className=" text-lg">as of {moment(dataCity.dt_txt).format('- DD MMM YYYY, h:mm a')} WIB</h1>
+      <h1 className=" text-lg">
+        as of {moment(dataCity.dt_txt).format("- DD MMM YYYY, h:mm a")} WIB
+      </h1>
       <div className="flex flex-col gap-4 justify-center items-center pb-10 relative">
         {list.length > 0 &&
           data.list.map((data, i) => (

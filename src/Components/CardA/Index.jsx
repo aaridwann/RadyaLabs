@@ -15,7 +15,7 @@ function CardA() {
     <div className="w-full h-80 bg-gradient-to-b rounded-xl from-purple-700 to-purple-400 flex flex-col items-start justify-between p-8">
       <div className=" flex flex-col ">
         <h1 className=" text-zinc-200 font-bold text-2xl">
-          {dataReal.name}, Indonesia Weather
+          {dataReal?.name}, Indonesia Weather
         </h1>
         <h3 className=" text-zinc-300 font-semibold text-lg ">
           as of {moment(dataReal?.dt_txt).format("dddd, DD MMMM YYYY, HH:mm ")}{" "}
@@ -31,7 +31,7 @@ function CardA() {
         <img
           className=" brightness-200 -mr-10 h-52"
           alt="icon"
-          src={`http://openweathermap.org/img/wn/${dataReal.weather[0].icon}@4x.png`}
+          src={`http://openweathermap.org/img/wn/${dataReal?.weather[0]?.icon}@4x.png`}
         />
       </div>
 
@@ -47,7 +47,7 @@ function CardA() {
       </div>
 
       <h3 className=" text-zinc-200 text-lg ">
-        {dataReal.weather[0].description}
+        {dataReal?.weather[0]?.description}
       </h3>
     </div>
   );

@@ -23,6 +23,7 @@ const DataCurrentProvider = ({children}) => {
             ...dataCurrent,
             dataCurrent: data.data,
             loading: false,
+            message:'success'
           });
         })
         .catch((err) =>
@@ -37,10 +38,11 @@ const DataCurrentProvider = ({children}) => {
     setDataCurrent({ ...dataCurrent, loading: false });
   }
 
-
   useEffect(() => {
     Fetching();
-  }, [dataCurrent.id]);
+  }, []);
+
+
   return (
     <dataCurrentContext.Provider value={{ dataCurrent, setDataCurrent }}>
       {children}
