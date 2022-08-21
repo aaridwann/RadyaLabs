@@ -1,6 +1,6 @@
 function DayConvert(time) {
   if (time > 6 && time <= 11) {
-    return "Day";
+    return "Morning";
   } else if (time > 11 && time <= 15) {
     return "Midday";
   } else if (time > 15 && time <= 18) {
