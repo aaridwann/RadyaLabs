@@ -36,7 +36,10 @@ const Items = React.memo(function Items({ data }) {
         <span>&#176;</span>
       </h1>
       <img alt="icon" className=" h-20 -mt-4" src={`http://openweathermap.org/img/wn/${data?.weather[0]?.icon}@4x.png`} />
+      <span className=" flex items-center">
+      <img src={'https://cdn0.iconfinder.com/data/icons/halloween-cute-vol-5/100/wizard__magic__stick__wand-512.png'} className='w- h-8'/>
       <h2 className=" font-semibold text-zinc-500">{data.pop * 100 + " %"}</h2>
+      </span>
     </div>
   );
 });

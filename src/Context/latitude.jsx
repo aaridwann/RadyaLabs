@@ -8,7 +8,6 @@ function LatitudeProvider({ children }) {
   function fetching() {
     window.navigator.geolocation.getCurrentPosition(async (x) => {
       const url =`http://api.openweathermap.org/data/2.5/forecast?cnt=5&lang=id&lat=${x.coords.latitude}&lon=${x.coords.longitude}&appid=`
-      // const url = `https://api.openweathermap.org/data/2.5/weather?lat=${x.coords.latitude}&lon=${x.coords.longitude}&appid=`;
       axios
         .get(url + API_KEY)
         .then((data) => {

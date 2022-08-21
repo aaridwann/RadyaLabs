@@ -10,13 +10,11 @@ const findBySearch = (city) => {
   async function fetching() {
     try {
       const res = await axios.get(url);
-      console.log(res.data);
       const data = [res.data]
       const filter = data.filter((x) => regex.test(x.name))
       setData(filter);
     } catch (error) {
       setData([])
-      console.log(error);
     }
     setLoading(false);
   }
