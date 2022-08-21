@@ -3,18 +3,18 @@ import moment from "moment";
 import { latitudeContext } from "../../Context/latitude";
 import temperatureConverter from "../../Utils/FahrenheitConvert/Index";
 import { dataCurrentContext } from "../../Context/DataCurrent";
-
+import {useNavigate} from 'react-router-dom'
 
 
 function CardA() {
+  const navigate = useNavigate()
   const { dataCurrent } = useContext(dataCurrentContext);
-  const { latitude } = useContext(latitudeContext);
-  const { data } = latitude;
   const dataReal = dataCurrent.dataCurrent
+  console.log(dataReal);
   return (
     <div className="w-full h-80 bg-gradient-to-b rounded-xl from-purple-700 to-purple-400 flex flex-col items-start justify-between p-8">
       <div className=" flex flex-col ">
-        <h1 className=" text-zinc-200 font-bold text-2xl">
+        <h1 onClick={() => navigate('/details'+dataReal.id)} className=" cursor-pointer text-zinc-200 font-bold text-2xl">
           {dataReal?.name}, Indonesia Weather
         </h1>
         <h3 className=" text-zinc-300 font-semibold text-lg ">
