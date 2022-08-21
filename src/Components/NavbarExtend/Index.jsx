@@ -2,13 +2,13 @@ import React from "react";
 import SearchComponent from "../Search/Index";
 import mendung from "../../assets/Weather/mendung.png";
 
-function NavbarExntd() {
+function NavbarExntd({value}) {
   return (
     <div className="  w-full h-full flex flex-col justify-center items-center">
       {/* Section A */}
       <div className="bg-purple-600 flex w-full justify-between items-center px-8 py-4">
         <h1 className=" text-white text-2xl font-bold">Title</h1>
-        <SearchComponent input={(e) => console.log(e)} />
+        <SearchComponent input={(e) => value(e)} />
         <div className=" flex gap-2">
           <p>ID</p>
           <p>EN</p>
@@ -24,4 +24,4 @@ function NavbarExntd() {
   );
 }
 
-export default NavbarExntd;
+export default React.memo(NavbarExntd);

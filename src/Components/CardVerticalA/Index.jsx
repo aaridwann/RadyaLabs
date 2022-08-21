@@ -12,4 +12,4 @@ function CardVertA() {
   );
 }
 
-export default CardVertA;
+export default React.memo(CardVertA);

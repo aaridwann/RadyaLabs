@@ -19,4 +19,4 @@ function SearchComponent({ input }) {
   );
 }
 
-export default SearchComponent;
+export default React.memo(SearchComponent);
